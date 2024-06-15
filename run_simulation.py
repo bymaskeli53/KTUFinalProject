@@ -5,10 +5,10 @@ import random
 import time
 
 # Gymnasium ortamını başlatın
-env = gym.make('AvoidBullets-v0')
+env = gym.make('AvoidBullets-v1')
 
 # Q-table initialization
-q_table = np.zeros([4, env.action_space.n])
+q_table = np.zeros([6, env.action_space.n])
 
 # Hyperparameters
 alpha = 0.1  # Learning rate
@@ -41,8 +41,7 @@ for i in range(num_episodes):
 print("Training finished.\n")
 
 # Test the agent
-step = 100
-for i in range(step):
+for i in range(100):
     state = env.reset()
     done = False
     total_reward = 0
